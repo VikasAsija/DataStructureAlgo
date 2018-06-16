@@ -20,7 +20,7 @@ public class IntegerArrayApp {
 		
 		arr.findByBinarySearch(100);
 		arr.delete(44);
-//		arr.display();
+		arr.display();
 		
 		
 		

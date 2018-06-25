@@ -102,4 +102,45 @@ public class IntegerArray {
 			arr[j] = smallestElem;
 		}
 	}
+	
+	public void insertionSort() {
+		
+		int j = 0;
+		for(int i = 1; i < maxIndex; ++i) {
+			int temp = arr[i];
+			for(j = i; j > 0; --j) {
+				if(temp < arr[j - 1]) {
+					arr[j] = arr[j - 1];
+					continue;
+				}
+				break;
+			}
+			arr[j] = temp;
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

@@ -17,7 +17,7 @@ public class IntegerArrayApp {
 		arr.insert(33);
 		arr.display();
 		
-		arr.selectionSort();
+		arr.insertionSort();
 		arr.display();
 	}
 }

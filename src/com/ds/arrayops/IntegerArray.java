@@ -39,6 +39,12 @@ public class IntegerArray {
 	}
 	
 	
+	
+	public void insert(Integer valueToBInserted) {
+		
+		arr[maxIndex] = valueToBInserted;
+		++maxIndex;
+	}
 
 	public int findByBinarySearch(Integer valueToBSearched) {
 		
@@ -100,15 +106,10 @@ public class IntegerArray {
 		}
 	}
 	
-	public void insert(Integer insertedValue) {
-		
-		arr[maxIndex] = insertedValue;
-		++maxIndex;
-	}
-	
 	public void bubbleSort() {
 		
-		for(int j = maxIndex - 1; j > 0; --j) {
+		int j =  maxIndex - 1;
+		for(; j > 0; --j) {
 			for(int i = 0; i < j; ++i) {
 				if(arr[i] > arr[i + 1]) {
 					int temp = arr[i];
@@ -121,17 +122,17 @@ public class IntegerArray {
 	
 	public void selectionSort() {
 		
-		for(int j = 0; j < maxIndex - 1; ++j) {
+		for(int j = 0; j < maxIndex; ++j) {
 			int smallestElem = arr[j];
-			int smallestIndex = j;
+			int smallestElemIndex = j;
 			for(int i = j; i < maxIndex; ++i) {
 				if(smallestElem > arr[i]) {
+					smallestElemIndex = i;
 					smallestElem = arr[i];
-					smallestIndex = i;
 				}
 			}
-			for(int k = smallestIndex; k > j; --k) {
-				arr[k] = arr[k - 1];
+			for(int i = smallestElemIndex; i > j; --i) {
+				arr[i] = arr[i - 1];
 			}
 			arr[j] = smallestElem;
 		}
@@ -139,12 +140,22 @@ public class IntegerArray {
 	
 	public void insertionSort() {
 		
+		int j = 0;
+		for(int i = 1; i < maxIndex; ++i) {
+			int temp = arr[i];
+			for(j = i; j > 0; --j) {
+				if(temp < arr[j - 1]) {
+					arr[j] = arr[j - 1];
+					continue;
+				}
+				break;
+			}
+			arr[j] = temp;
+		}
+		
+		
 		
 	}
-	
-	
-	
-	
 	
 	
 	

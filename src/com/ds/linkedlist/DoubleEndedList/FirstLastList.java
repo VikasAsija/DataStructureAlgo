@@ -18,25 +18,30 @@ public class FirstLastList {
 		this.last = last;
 	}
 	
+	public boolean isEmpty() {
+		
+		return first == null;
+	}
+	
 	public void insertFirst(Integer intValue) {
 		
-		Link temp = first;
-		first = new Link(intValue);
-		first.setNext(temp);
+		Link newLink = new Link(intValue);
+		if(isEmpty()) {
+			last = newLink;
+		}
+		newLink.setNext(first);
+		first = newLink;
 	}
 	
 	public void insertLast(Integer intValue) {
 		
-		Link temp = first;
-		while(temp != null) {
-			if(temp.getNext() == null) {
-				temp.setNext(new Link(intValue));
-				return;
-			}
-			temp = temp.getNext();
+		Link newLink = new Link(intValue); 
+		if(isEmpty()) {
+			first = newLink;
+		}else {
+			last.setNext(newLink);
 		}
-		first = new Link(intValue);
-		
+		last = newLink;
 	}
 	
 	public void displayList() {

@@ -11,7 +11,7 @@ public class FirstLastApp {
 		theList.insertLast(11); // insert at rear
 		theList.insertLast(33);
 		theList.insertLast(55);
-		theList.displayList(); // display the list
+//		theList.displayList(); // display the list
 		theList.deleteFirst(); // delete first two items
 		theList.deleteFirst();
 		theList.displayList();

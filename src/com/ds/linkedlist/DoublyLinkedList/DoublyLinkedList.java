@@ -30,31 +30,65 @@ public class DoublyLinkedList {
 		last = newLink;
 	}
 	
-	
-	
 	public void displayForward() {
 		
-		
+		Link temp = first;
+		while(temp != null) {
+			System.out.println("Value : "+temp.getValue());
+			temp = temp.getNext();
+		}
 	}
 
 	public void displayBackward() {
 		
+		Link temp = last;
+		while(temp != null) {
+			System.out.println("Value : "+temp.getValue());
+			temp = temp.getPrevious();
+		}
 		
 	}
 	
 	public void deleteFirst() {
 		
+		first = first.getNext();
+		first.setPrevious(null);
+		
 	}
 	
 	public void deleteLast() {
+		
+		last = last.getPrevious();
+		last.setNext(null);
 		
 	}
 	
 	public void deleteKey(Integer value) {
 		
+		Link temp = first;
+		while(temp != null) {
+			
+			if(temp.getValue() == value) {
+				
+				System.out.println("Key Deleted :" + temp.getValue());
+				if(temp.getPrevious() != null) {
+					temp.getPrevious().setNext(temp.getNext());
+					break;
+				}
+				first = temp.getNext();
+				if(first != null) {
+					first.setPrevious(null);
+				}
+				break;
+			}
+			temp = temp.getNext();
+		}
+		
 		
 	}
 	public void insertAfter(Integer insertAfter, Integer value) {
+		
+		
 		
 		
 	}

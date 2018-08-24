@@ -1,7 +1,5 @@
 package com.ds.linkedlist.DoublyLinkedList;
 
-import com.ds.linkedlist.model.Link;
-
 public class DoublyLinkedList {
 	
 	private Link first;

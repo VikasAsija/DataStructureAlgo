@@ -1,5 +1,7 @@
 package com.ds.linkedlist.DoublyLinkedList;
 
+import com.ds.linkedlist.model.Link;
+
 public class DoublyLinkedList {
 	
 	private Link first;
@@ -88,7 +90,19 @@ public class DoublyLinkedList {
 	}
 	public void insertAfter(Integer insertAfter, Integer value) {
 		
-		
+		Link temp = first;
+		while(temp != null) {
+			
+			if(temp.getValue() == insertAfter) {
+				Link newLink = new Link(value);
+				newLink.setNext(temp.getNext());
+				newLink.setPrevious(temp);
+				temp.setNext(newLink);
+				break;
+			}
+			temp = temp.getNext();
+			
+		}
 		
 		
 	}

@@ -1,5 +1,7 @@
 package com.ds.linkedlist.DoublyLinkedList;
 
+import java.util.LinkedList;
+
 public class DoublyLinkedApp {
 
 	public static void main(String[] args) {
@@ -20,6 +22,9 @@ public class DoublyLinkedApp {
 		theList.insertAfter(22, 77); // insert 77 after 22
 		theList.insertAfter(33, 88); // insert 88 after 33
 		theList.displayForward(); // display list forward
+		
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		list.listIterator().add(11);
 
 	}
 
